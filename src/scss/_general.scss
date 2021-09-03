@@ -1,0 +1,44 @@
+//-----------GENERAL-------------
+
+html {
+  @include box-sizing( border-box );
+}
+
+*, *:before, *:after { box-sizing: inherit;
+}
+
+//Float
+.group:before,
+.group:after {
+  content: " ";
+	display: table;
+}
+
+.group:after {
+	clear:both;
+}
+
+//pre responzivitu
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+body {
+  margin: 0 auto;
+  font-size: $font-size-body;
+  // font-family: $font-family-basic;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  // max-width: $max-width-container;
+  margin: auto;
+}

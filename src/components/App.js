@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
-import "./App.css";
+import Discover from "./Discover";
+import {v1 as uuid} from "uuid"; 
 
 const App = () => {
-  const APP_ID = "need add";
-  const APP_KEY = "need add";
+  const APP_ID = "ea973b87";
+  const APP_KEY = "e1d0d9e817be8f0546891773cdd59989";
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
+
+  let id = uuid();
+
+// extractIdFromUri(uri) {
+//   return uri.split('#recipe_').pop()
+// }
+
 
   useEffect(() => {
     getRecipes();
@@ -18,6 +26,7 @@ const App = () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
+    
     const data = await response.json();
     setRecipes(data.hits);
   };
@@ -31,6 +40,7 @@ const App = () => {
     setQuery(search);
     setSearch("");
   };
+  
 
   return (
     <div className="App">
@@ -45,6 +55,9 @@ const App = () => {
           Search
         </button>
       </form>
+      <div className="discover">
+        <Discover/>
+      </div>
       <div className="recipes">
         {recipes.map((recipe) => (
           <Recipe
@@ -53,6 +66,11 @@ const App = () => {
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
+            uri={recipe.recipe.uri}
+            url={recipe.recipe.url}
+            source={recipe.recipe.source}
+            id={id}
+            shareAs={recipe.recipe.shareAs}
           />
         ))}
       </div>
