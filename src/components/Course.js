@@ -1,9 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
 const course = ({setQuery}) => {
     const preferenceBreakfast = (e) => {
-        // const addClass = document.getElementById("breakfast")
-        // addClass.className += " tag--checked";
         const preferenceID = document.getElementById("breakfast").innerText;
         setQuery(preferenceID);
         console.log(preferenceID)
