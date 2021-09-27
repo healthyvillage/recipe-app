@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
-import Discover from "./Discover";
-import {v1 as uuid} from "uuid"; 
+import Course from "./Course"
+import { v1 as uuid } from "uuid";
 
 const App = () => {
   const APP_ID = "ea973b87";
@@ -9,14 +9,9 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("");
 
   let id = uuid();
-
-// extractIdFromUri(uri) {
-//   return uri.split('#recipe_').pop()
-// }
-
 
   useEffect(() => {
     getRecipes();
@@ -26,7 +21,7 @@ const App = () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-    
+
     const data = await response.json();
     setRecipes(data.hits);
   };
@@ -35,29 +30,89 @@ const App = () => {
     setSearch(e.target.value);
   };
 
+  // const preferenceBreakfast = (e) => {
+  //   // const addClass = document.getElementById("breakfast")
+  //   // addClass.className += " tag--checked";
+  //   const preferenceID = document.getElementById("breakfast").innerText;
+  //   setQuery(preferenceID);
+  //   console.log(preferenceID)
+  //   addClass(e);
+  // }
+
+  // const preferenceLunch = (e) => {
+  //   const preferenceID = document.getElementById("lunch").innerText;
+  //   setQuery(preferenceID);
+  //   console.log(preferenceID)
+  //   addClass(e);
+  // }
+
+  // const preferenceDinner = (e) => {
+  //   const preferenceID = document.getElementById("dinner").innerText;
+  //   setQuery(preferenceID);
+  //   console.log(preferenceID)
+  //   addClass(e);
+  // }
+
+  // const preferenceSnack = (e) => {
+  //   const preferenceID = document.getElementById("snack").innerText;
+  //   setQuery(preferenceID);
+  //   console.log(preferenceID)
+  //   addClass(e);
+  // }
+
   const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
   };
-  
+
+  // const addClass = (event) => event.target.classList.toggle("tag--checked");
 
   return (
     <div className="App">
-      <form onSubmit={getSearch} className="search-form">
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          onChange={updateSearch}
-        />
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
       <div className="discover">
-        <Discover/>
+        <form onSubmit={getSearch} className="search-form">
+          <input
+            id="yea"
+            className="search-bar"
+            type="text"
+            value={search}
+            onChange={updateSearch}
+            placeholder="Search Recipe"
+          />
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </form>
+
+        <div className="type_preference">
+          <Course setQuery={setQuery} />
+          {/* <h2>By Course</h2>
+          <ul>
+            <li>
+              <a id="breakfast" className="tag" onClick={preferenceBreakfast} value="breakfast">
+                Breakfast
+              </a>
+            </li>
+            <li>
+              <a id="lunch" className="tag" onClick={preferenceLunch} value="lunch">
+                Lunch
+              </a>
+            </li>
+            <li>
+              <a id="dinner" className="tag" onClick={preferenceDinner} value="dinner">
+                Dinner
+              </a>
+            </li>
+            <li>
+              <a id="snack" className="tag" onClick={preferenceSnack} value="snack">
+                Snack
+              </a>
+            </li>
+          </ul> */}
+        </div>
       </div>
+
       <div className="recipes">
         {recipes.map((recipe) => (
           <Recipe
@@ -71,6 +126,8 @@ const App = () => {
             source={recipe.recipe.source}
             id={id}
             shareAs={recipe.recipe.shareAs}
+            mealType={recipe.recipe.mealType}
+            dietLabels={recipe.recipe.dietLabels}
           />
         ))}
       </div>

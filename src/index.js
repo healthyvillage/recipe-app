@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './css/normalize.css';
 import "./css/style.css"
 import App from './components/App';
+import Discover from "./components/Discover";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Discover />
   </React.StrictMode>,
   document.getElementById('root')
 );
