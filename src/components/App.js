@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Filter from "./Filter";
 import Recipe from "./Recipe";
-import Course from "./Course"
-import Preference from "./Preference"
-import Diet from "./Diet"
-import World from "./World"
+import Course from "./Course";
+import Preference from "./Preference";
+import Diet from "./Diet";
+import World from "./World";
 import { v1 as uuid } from "uuid";
 
 const App = () => {
@@ -13,12 +14,13 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
+  const [healthLabels, sethealthLabels] = useState("vegan");
 
   let id = uuid();
 
   useEffect(() => {
     getRecipes();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   const getRecipes = async () => {
@@ -30,6 +32,9 @@ const App = () => {
     setRecipes(data.hits);
   };
 
+  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&&health=${healthLabels}`;
+  
+
   const updateSearch = (e) => {
     setSearch(e.target.value);
   };
@@ -40,9 +45,13 @@ const App = () => {
     setSearch("");
   };
 
+  // const getUri = (uri) =>
+  // uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
+
   return (
     <div className="App">
       <div className="discover">
+        <Filter />
         <form onSubmit={getSearch} className="search-form">
           <input
             id="yea"
