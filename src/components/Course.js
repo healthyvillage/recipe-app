@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import $ from "jquery"
 
 const course = ({setQuery}) => {
     const preferenceBreakfast = (e) => {
@@ -30,7 +31,14 @@ const course = ({setQuery}) => {
         addClass(e);
       }
 
-      const addClass = (event) => event.target.classList.toggle("tag--checked");
+      // const addClass = (event) => event.target.classList.toggle("tag--checked");
+
+      const addClass = () => $(document).on('click', 'ul li a', function () {
+        var $el = $(this);
+        var $other = $("ul a")
+        $other.removeClass('tag--checked');
+        $el.addClass("tag--checked");
+    });
 
     return (
         <div>

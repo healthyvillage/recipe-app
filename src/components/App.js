@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import Course from "./Course"
 import Preference from "./Preference"
+import Diet from "./Diet"
+import World from "./World"
 import { v1 as uuid } from "uuid";
 
 const App = () => {
@@ -58,6 +60,8 @@ const App = () => {
         <div className="type_preference">
           <Course setQuery={setQuery} />
           <Preference setQuery={setQuery} />
+          <Diet setQuery={setQuery} />
+          <World setQuery={setQuery} />
         </div>
       </div>
 
