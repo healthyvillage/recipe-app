@@ -4,7 +4,7 @@ import $ from "jquery";
 
 
 
-const preference = ({ setQuery, setHealth, getRecipes }) => {
+const preference = ({ setQuery }) => {
 
   const preferenceVegetarian = (e) => {
     const preferenceID = document.getElementById("vegetarian").innerText;
@@ -13,19 +13,11 @@ const preference = ({ setQuery, setHealth, getRecipes }) => {
     addClass(e);
   }
 
-  // const preferenceVegan = (e) => {
-  //   const preferenceID = document.getElementById("vegan").innerText;
-  //   setQuery(preferenceID);
-  //   console.log(preferenceID)
-  //   addClass(e);
-  // }
-
   const preferenceVegan = (e) => {
-    const preferenceID = document.getElementById("vegan").id;
-    setHealth(preferenceID);
+    const preferenceID = document.getElementById("vegan").innerText;
+    setQuery(preferenceID);
     console.log(preferenceID)
     addClass(e);
-    getRecipes();
   }
 
   const preferenceLowSugar = (e) => {
@@ -42,14 +34,14 @@ const preference = ({ setQuery, setHealth, getRecipes }) => {
     addClass(e);
   }
 
-  // const addClass = (event) => event.target.classList.toggle("tag--checked");
-
-  const addClass = () => $(document).on('click', 'ul li a', function () {
-    var $el = $(this);
-    var $other = $("ul a")
-    $other.removeClass('tag--checked');
-    $el.addClass("tag--checked");
-});
+  function addClass() {
+    return $(document).on('click', 'ul li a', function () {
+      var $el = $(this);
+      var $other = $("ul a");
+      $other.removeClass('tag--checked');
+      $el.addClass("tag--checked");
+    });
+  }
 
   return (
     <div>

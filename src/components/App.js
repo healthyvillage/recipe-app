@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Filter from "./Filter";
 import Recipe from "./Recipe";
 import Course from "./Course";
 import Preference from "./Preference";
@@ -14,23 +13,22 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
-  const [health, setHealth] = useState('paleo');
   
   let id = uuid();
 
   useEffect(() => {
     getRecipes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, health]);
+  }, [query]);
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=30&health=${health}`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=20`
     );
 
     const data = await response.json();
     setRecipes(data.hits);
-    console.log(data)
+    // console.log(data)
   };
 
   // health=${health}
@@ -48,7 +46,6 @@ const App = () => {
   return (
     <div className="App">
       <div className="discover">
-        {/* <Filter sethealthLabels={sethealthLabels} /> */}
         <form onSubmit={getSearch} className="search-form">
           <input
             id="yea"
@@ -66,7 +63,7 @@ const App = () => {
 
         <div className="type_preference">
           <Course setQuery={setQuery} />
-          <Preference setQuery={setQuery} setHealth={setHealth} getRecipes={getRecipes} />
+          <Preference setQuery={setQuery} />
           <Diet setQuery={setQuery} />
           <World setQuery={setQuery} />
         </div>
@@ -87,8 +84,7 @@ const App = () => {
             shareAs={recipe.recipe.shareAs}
             mealType={recipe.recipe.mealType}
             dietLabels={recipe.recipe.dietLabels}
-            label={recipe.recipe.label}
-            
+            label={recipe.recipe.label}       
           />
         ))}
       </div>
