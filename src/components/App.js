@@ -14,26 +14,26 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
-  const [healthLabels, sethealthLabels] = useState("vegan");
-
+  const [health, setHealth] = useState('paleo');
+  
   let id = uuid();
 
   useEffect(() => {
     getRecipes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  }, [query, health]);
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=30&health=${health}`
     );
 
     const data = await response.json();
     setRecipes(data.hits);
+    console.log(data)
   };
 
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&&health=${healthLabels}`;
-  
+  // health=${health}
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -45,13 +45,10 @@ const App = () => {
     setSearch("");
   };
 
-  // const getUri = (uri) =>
-  // uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
-
   return (
     <div className="App">
       <div className="discover">
-        <Filter />
+        {/* <Filter sethealthLabels={sethealthLabels} /> */}
         <form onSubmit={getSearch} className="search-form">
           <input
             id="yea"
@@ -60,6 +57,7 @@ const App = () => {
             value={search}
             onChange={updateSearch}
             placeholder="Search Recipe"
+            
           />
           <button className="search-button" type="submit">
             Search
@@ -68,7 +66,7 @@ const App = () => {
 
         <div className="type_preference">
           <Course setQuery={setQuery} />
-          <Preference setQuery={setQuery} />
+          <Preference setQuery={setQuery} setHealth={setHealth} getRecipes={getRecipes} />
           <Diet setQuery={setQuery} />
           <World setQuery={setQuery} />
         </div>
@@ -89,6 +87,8 @@ const App = () => {
             shareAs={recipe.recipe.shareAs}
             mealType={recipe.recipe.mealType}
             dietLabels={recipe.recipe.dietLabels}
+            label={recipe.recipe.label}
+            
           />
         ))}
       </div>

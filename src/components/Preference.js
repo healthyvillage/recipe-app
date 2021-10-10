@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React from 'react';
 import $ from "jquery";
 
-const preference = ({ setQuery }) => {
+
+
+const preference = ({ setQuery, setHealth, getRecipes }) => {
+
   const preferenceVegetarian = (e) => {
     const preferenceID = document.getElementById("vegetarian").innerText;
     setQuery(preferenceID);
@@ -10,11 +13,19 @@ const preference = ({ setQuery }) => {
     addClass(e);
   }
 
+  // const preferenceVegan = (e) => {
+  //   const preferenceID = document.getElementById("vegan").innerText;
+  //   setQuery(preferenceID);
+  //   console.log(preferenceID)
+  //   addClass(e);
+  // }
+
   const preferenceVegan = (e) => {
-    const preferenceID = document.getElementById("vegan").innerText;
-    setQuery(preferenceID);
+    const preferenceID = document.getElementById("vegan").id;
+    setHealth(preferenceID);
     console.log(preferenceID)
     addClass(e);
+    getRecipes();
   }
 
   const preferenceLowSugar = (e) => {
@@ -55,7 +66,7 @@ const preference = ({ setQuery }) => {
           </a>
         </li>
         <li>
-          <a id="vegan" className="tag" onClick={preferenceVegan} value="vegan">
+          <a id="vegan" className="tag" onClick={() => preferenceVegan()} value="vegan">
             Vegan
           </a>
         </li>

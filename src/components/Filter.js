@@ -1,6 +1,6 @@
 import React from 'react';
 
-function filter() {
+function filter({sethealthLabels}) {
     return ( 
         <div className="filters_group">
             <div className="filters_toggle">
@@ -27,8 +27,8 @@ function filter() {
                                 <label>Nuts-free</label>
                             </div>
                         </div>
-
-                        <button>Apply Labels</button>
+                        
+                        <button onClick={() => sethealthLabels()}>Apply Labels</button>
                         <button>Clear</button>
                     </form>
                 </div>

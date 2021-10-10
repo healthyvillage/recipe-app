@@ -9,10 +9,8 @@ const Recipe = ({
   url,
   mealType,
   dietLabels,
+  label,
 }) => {
-
-  // const getUri = (uri) =>
-  // uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
 
   return (
     <div className="recipe">
@@ -25,10 +23,11 @@ const Recipe = ({
         <p>{ingredients.length}</p>
         <p>{mealType}</p>
         <p>{dietLabels}</p>
+        <p>{label}</p>
+        
       </div>
       <div className="view-recipe">
         <a
-          // href={`${getUri(uri)}`}
           href={url}
           className="button-view"
           target="_blanket"
