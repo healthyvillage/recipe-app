@@ -1,9 +1,9 @@
 // ---------------CONTENT--------------
-
-.App {
+.content {
     display: flex;
+    justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    // background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   }
   
   .search-form {
@@ -27,6 +27,7 @@
   }
   
   .recipes {
+    max-width: 1400px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -85,28 +86,61 @@
     height: 100px; */
 }
 
-h1 {
-    // max-width: 250px;
-    text-align: center;
-    font-size: 1em;
-    margin-top: 0.5em;
+.panel-search {
+  padding-top: 1em;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  border-radius: 10px 10px 0 0;
 }
 
 .discover {
-  margin-left: 1.5em;
+  width: 480px;
+  text-align: center;
+  background: #ffff;
+  border-radius: 15px;
+  margin-top: 0.75em;
+  // background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.discover-content {
+  width: 380px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.panel-card {
+  width: 450px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(255, 176, 58, 0.651) 0px 1px 2px 0px, rgba(255, 176, 58, 0.651) 0px 1px 3px 1px;
+    margin-bottom: 1em;
 }
 
 .type_preference h2 {
-    margin: 0 0 0 0;
+    padding: 0.3em 0 0 0.3em;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+
+.type_preference {
+  padding: 1em 0 1em 0;
+  border-radius: 15px;
+    background: #fff;
 }
 
 .type_preference ul {
+  margin: 0 auto;
+  margin-top: 1em;
+  width: 380px;
   padding-left: 0;
+  text-align: left;
 }
 
 .type_preference ul li {
   display: inline-block;
   margin-right: 0.4em;
+  margin-bottom: 1.1em;
 }
 
 .tag {
@@ -148,6 +182,14 @@ svg:not(:root).svg-inline--fa {
 
 img, svg {
   max-width: 100%;
+}
+
+.title_type  {
+  display: flex;
+}
+
+.preference-svg {
+  width: 25px;
 }
 // ---------- MEDIA QUERIES ------
 

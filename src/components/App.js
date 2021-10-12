@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import Course from "./Course";
 import Preference from "./Preference";
-import Diet from "./Diet";
+import Diet from "./Allergens";
 import World from "./World";
+import Header from "./Header";
 import { v1 as uuid } from "uuid";
+
 
 const App = () => {
   const APP_ID = "ea973b87";
@@ -13,7 +15,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
-  
+
   let id = uuid();
 
   useEffect(() => {
@@ -45,48 +47,62 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="discover">
-        <form onSubmit={getSearch} className="search-form">
-          <input
-            id="yea"
-            className="search-bar"
-            type="text"
-            value={search}
-            onChange={updateSearch}
-            placeholder="Search Recipe"
-            
-          />
-          <button className="search-button" type="submit">
-            Search
-          </button>
-        </form>
-
-        <div className="type_preference">
-          <Course setQuery={setQuery} />
-          <Preference setQuery={setQuery} />
-          <Diet setQuery={setQuery} />
-          <World setQuery={setQuery} />
+      <Header />
+      <div className="content">
+        <div className="discover">
+          <section className="panel-search">
+            <h1>Discover what to cook & eat.</h1>
+            <form onSubmit={getSearch} className="search-form">
+              <input
+                id="yea"
+                className="search-bar"
+                type="text"
+                value={search}
+                onChange={updateSearch}
+                placeholder="Search Recipe"
+              />
+              <button className="search-button" type="submit">
+                Search
+              </button>
+            </form>
+          </section>
+          {/* <section className="discover-content"> */}
+          <div className="type_preference">
+            <section className="panel-card course">
+              <Course setQuery={setQuery} />
+            </section>
+            <section className="panel-card preference">
+              <Preference setQuery={setQuery} />
+            </section>
+            <section className="panel-card diet">
+              <Diet setQuery={setQuery} />
+            </section>
+            <section className="panel-card world">
+              <World setQuery={setQuery} />
+            </section>
+          </div>
+          {/* </section> */}
         </div>
-      </div>
 
-      <div className="recipes">
-        {recipes.map((recipe) => (
-          <Recipe
-            key={recipe.recipe.label}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients}
-            uri={recipe.recipe.uri}
-            url={recipe.recipe.url}
-            source={recipe.recipe.source}
-            id={id}
-            shareAs={recipe.recipe.shareAs}
-            mealType={recipe.recipe.mealType}
-            dietLabels={recipe.recipe.dietLabels}
-            label={recipe.recipe.label}       
-          />
-        ))}
+        <div className="recipes">
+          {recipes.map((recipe) => (
+            <Recipe
+              key={recipe.recipe.label}
+              title={recipe.recipe.label}
+              calories={recipe.recipe.calories}
+              image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients}
+              uri={recipe.recipe.uri}
+              url={recipe.recipe.url}
+              source={recipe.recipe.source}
+              id={id}
+              shareAs={recipe.recipe.shareAs}
+              mealType={recipe.recipe.mealType}
+              dietLabels={recipe.recipe.dietLabels}
+              label={recipe.recipe.label}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
