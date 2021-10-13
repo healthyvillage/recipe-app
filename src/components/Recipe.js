@@ -1,32 +1,21 @@
 import React from "react";
-  
-const Recipe = ({
-  title,
-  calories,
-  image,
-  ingredients,
-  uri,
-  url,
-  mealType,
-  dietLabels,
-  label,
-}) => {
+
+const Recipe = ({ title, calories, image, ingredients, url, cuisineType }) => {
+  function handleSubmit() {}
 
   return (
-    <div className="recipe">
-      <img className="image" src={image} alt="" />
+    <div className="recipe" onClick={handleSubmit}>
+      <a href={url} className="button-view" target="_blanket">
+        <img className="image" src={image} alt="img" />
 
-      <h1>{title}</h1>
+        <h2>{title}</h2>
 
-      <div className="labels">
-        <p>{Math.round(calories)} Calories</p>
-        <p>{ingredients.length}</p>
-        <p>{mealType}</p>
-        <p>{dietLabels}</p>
-        <p>{label}</p>
-        
-      </div>
-      <div className="view-recipe">
+        <div className="labels">
+          <p>{Math.round(calories)} Calories</p>
+          <p>{ingredients.length} Ingredients</p>
+        </div>
+      </a>
+      {/* <div className="view-recipe">
         <a
           href={url}
           className="button-view"
@@ -34,7 +23,7 @@ const Recipe = ({
         >
           View recept
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

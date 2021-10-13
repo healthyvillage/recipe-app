@@ -3,47 +3,60 @@
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    // background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    justify-content: flex-end;
   }
   
+  // .search-form {
+  //   min-height: 10vh;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+
   .search-form {
-    min-height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 1em 0;
   }
   
   .search-bar {
-    // width: 50%;
-    border: none;
-    padding: 10px;
+    width: 320px;
+    padding: 11px;
+    border-radius: 10px 0 0 10px;
   }
+
+  input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
   
   .search-button {
-    background: lightcoral;
+    background: #ffaf00;
+    height: 44px;
     border: none;
-    padding: 10px 20px;
+    border-bottom: 2px solid #ffaf00;
+    padding: 11px 13px;
     color: white;
+    border-radius: 0 10px 10px 0;
+  }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 2px solid #ffaf00;
+  }
+
+  .search-button svg {
+    width: 25px;
+    vertical-align: middle;
   }
   
   .recipes {
     max-width: 1400px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    // overflow: scroll;
   }
-  
+
   .button-view {
-    background: #bada55;
-    padding: 0.6em;
-    text-decoration: none;
-    border-radius: 5px;
-    color: #ffff
-  }
-  
-  .button-view:hover,
-  .button-view:focus {
-    color: #cccc
+    color: #242424;
   }
 
   .recipe {
@@ -52,44 +65,47 @@
     height: fit-content;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 5px 20px #474747;
-    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 0 0 2em 0;
     justify-content: flex-end;
     background: white;
     flex-direction: column;
     align-items: center;
 }
 
-.view-recipe {
-  display: flex;
+.recipe:hover,
+.recipe:focus {
+  // box-shadow: rgba(253, 181, 48, 0.829) 0px 3px 8px;
+  box-shadow: rgba(253, 181, 48, 0.829) 0px 1px 0px;
+  transition: all .2s ease-in;
+  transform: scale(1.03);
 }
 
-
 .labels {
+  display: flex;
   text-align: center;
-  margin-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .labels p {
-  display: inline-block;
-  margin: 0;
   font-size: 0.75em;
   padding: 0.5em;
-  background-color: #feffc1;
   border-radius: 10px;
   font-weight: bold;
+  background-color: #feffc1;
+  color: #ffaf00;
+  box-shadow: rgba(0, 0, 0, 0.10) 1.95px 1.95px 2.6px;
 }
 
 .image {
     border-radius: 3% 3% 0 0;
-    /* width: 100px;
-    height: 100px; */
 }
 
 .panel-search {
-  padding-top: 1em;
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  padding-top: 0.5em;
   border-radius: 10px 10px 0 0;
+  background-color: #ffc546;
 }
 
 .discover {
@@ -97,8 +113,8 @@
   text-align: center;
   background: #ffff;
   border-radius: 15px;
-  margin-top: 0.75em;
-  // background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  border: 2px solid #ffaf0070;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
 }
 
 .discover-content {
@@ -108,19 +124,12 @@
 }
 
 .panel-card {
-  width: 450px;
+  width: 400px;
     margin: auto;
     background: #fff;
     border-radius: 10px;
     box-shadow: rgba(255, 176, 58, 0.651) 0px 1px 2px 0px, rgba(255, 176, 58, 0.651) 0px 1px 3px 1px;
     margin-bottom: 1em;
-}
-
-.type_preference h2 {
-    padding: 0.3em 0 0 0.3em;
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 0.3em;
 }
 
 .type_preference {
@@ -139,22 +148,27 @@
 
 .type_preference ul li {
   display: inline-block;
-  margin-right: 0.4em;
+  margin-right: 0.5em;
   margin-bottom: 1.1em;
 }
 
 .tag {
   padding: 6px;
-  background: #ccc;
+  // background: #ccc;
   border-radius: 5px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
-.tag:focus {     
-  background-color:yellow;    
+.tag:focus,
+.tag:hover {     
+  background:#ffaf00;
+  color: #fff;
+  box-shadow: rgba(255, 194, 62, 0.2) 0px 8px 24px;
 }
 
 .tag--checked {
-  background: #54ce1c;
+  background: #ffaf00;
+  color: #fff;
 }
 
 
@@ -186,11 +200,39 @@ img, svg {
 
 .title_type  {
   display: flex;
+  margin-left: 0.65em;
+  padding: 0.2em;
 }
 
 .preference-svg {
   width: 25px;
 }
+
+/* Works on Firefox */
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: blue orange;
+// }
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 1em;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(187, 187, 187, 0.753);
+  border-radius: 20px;
+ outline: 1px solid slategrey;
+}
+
+.recipes {
+  overflow-x: scroll
+}
+
 // ---------- MEDIA QUERIES ------
 
 

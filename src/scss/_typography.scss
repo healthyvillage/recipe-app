@@ -1,11 +1,43 @@
 //-----------TYPOGRAPHY-------------
 h1 {
-    font-size: 2em;
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+    width: 370px;
+    margin: 0 auto;
+    margin-bottom: 0em;
+    color: #fafafa;
+}
+
+h2 {
+    font-size: 18px;
+    width: 240px;
+    height: 65px;
+    margin: auto;
+    margin-top: 0.5em;
+}
+
+.panel-title {
+    font-size: 18px;
+    padding: 0.3em 0 0 0.5em;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+    font-weight: bold;
 }
 
 .logo  {
     font-family: 'Galada', cursive;
-    margin: 0.2em 0 0.1em 0;
-    font-size: 32px;
+    margin: 0.1em 0 0.1em 0;
+    font-size: 45px;
     font-weight: bold;
+    color: #ffc546;
 }
+
+.tag {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');

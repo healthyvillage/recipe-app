@@ -7,7 +7,6 @@ import World from "./World";
 import Header from "./Header";
 import { v1 as uuid } from "uuid";
 
-
 const App = () => {
   const APP_ID = "ea973b87";
   const APP_KEY = "e1d0d9e817be8f0546891773cdd59989";
@@ -49,39 +48,66 @@ const App = () => {
     <div className="App">
       <Header />
       <div className="content">
-        <div className="discover">
-          <section className="panel-search">
-            <h1>Discover what to cook & eat.</h1>
-            <form onSubmit={getSearch} className="search-form">
-              <input
-                id="yea"
-                className="search-bar"
-                type="text"
-                value={search}
-                onChange={updateSearch}
-                placeholder="Search Recipe"
-              />
-              <button className="search-button" type="submit">
-                Search
-              </button>
-            </form>
-          </section>
-          {/* <section className="discover-content"> */}
-          <div className="type_preference">
-            <section className="panel-card course">
-              <Course setQuery={setQuery} />
+        <div className="panel-wrap">
+          <div className="discover">
+            <section className="panel-search">
+              <h1>Discover what to cook & eat.</h1>
+              <form onSubmit={getSearch} className="search-form">
+                <input
+                  id="yea"
+                  className="search-bar"
+                  type="text"
+                  value={search}
+                  onChange={updateSearch}
+                  placeholder="Search Recipe / Ingredients"
+                  autocomplete="off"
+                />
+                <button className="search-button" type="submit">
+                  <svg
+                    viewBox="0 0 50 50"
+                    width="50px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect fill="none" height="50" width="50" />
+                    <circle
+                      cx="21"
+                      cy="20"
+                      fill="none"
+                      r="16"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-miterlimit="10"
+                      stroke-width="2"
+                    />
+                    <line
+                      fill="none"
+                      stroke="#000000"
+                      stroke-miterlimit="10"
+                      stroke-width="4"
+                      x1="32.229"
+                      x2="45.5"
+                      y1="32.229"
+                      y2="45.5"
+                    />
+                  </svg>
+                </button>
+              </form>
             </section>
-            <section className="panel-card preference">
-              <Preference setQuery={setQuery} />
-            </section>
-            <section className="panel-card diet">
-              <Diet setQuery={setQuery} />
-            </section>
-            <section className="panel-card world">
-              <World setQuery={setQuery} />
-            </section>
+            <div className="type_preference">
+              <section className="panel-card course">
+                <Course setQuery={setQuery} />
+              </section>
+              <section className="panel-card preference">
+                <Preference setQuery={setQuery} />
+              </section>
+              <section className="panel-card diet">
+                <Diet setQuery={setQuery} />
+              </section>
+              <section className="panel-card world">
+                <World setQuery={setQuery} />
+              </section>
+            </div>
           </div>
-          {/* </section> */}
         </div>
 
         <div className="recipes">
@@ -92,14 +118,9 @@ const App = () => {
               calories={recipe.recipe.calories}
               image={recipe.recipe.image}
               ingredients={recipe.recipe.ingredients}
-              uri={recipe.recipe.uri}
               url={recipe.recipe.url}
-              source={recipe.recipe.source}
               id={id}
-              shareAs={recipe.recipe.shareAs}
-              mealType={recipe.recipe.mealType}
-              dietLabels={recipe.recipe.dietLabels}
-              label={recipe.recipe.label}
+              cuisineType={recipe.recipe.cuisineType}  
             />
           ))}
         </div>
