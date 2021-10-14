@@ -61,10 +61,10 @@
 
   .recipe {
     display: flex;
-    width: 250px;
+    width: 270px;
     height: fit-content;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     margin: 0 0 2em 0;
     justify-content: flex-end;
@@ -99,7 +99,7 @@
 }
 
 .image {
-    border-radius: 3% 3% 0 0;
+    border-radius: 6% 6% 0 0;
 }
 
 .panel-search {
@@ -205,6 +205,10 @@ img, svg {
 }
 
 .preference-svg {
+  width: 25px;
+}
+
+.labels svg {
   width: 25px;
 }
 

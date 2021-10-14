@@ -120,7 +120,7 @@ const App = () => {
               ingredients={recipe.recipe.ingredients}
               url={recipe.recipe.url}
               id={id}
-              cuisineType={recipe.recipe.cuisineType}  
+              totalTime={recipe.recipe.totalTime}  
             />
           ))}
         </div>

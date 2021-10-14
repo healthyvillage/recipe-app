@@ -122,10 +122,10 @@ input[type=text] {
 
 .recipe {
   display: flex;
-  width: 250px;
+  width: 270px;
   height: fit-content;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin: 0 0 2em 0;
   justify-content: flex-end;
@@ -155,7 +155,7 @@ input[type=text] {
   box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px; }
 
 .image {
-  border-radius: 3% 3% 0 0; }
+  border-radius: 6% 6% 0 0; }
 
 .panel-search {
   padding-top: 0.5em;
@@ -241,6 +241,9 @@ img, svg {
   padding: 0.2em; }
 
 .preference-svg {
+  width: 25px; }
+
+.labels svg {
   width: 25px; }
 
 /* Works on Firefox */
