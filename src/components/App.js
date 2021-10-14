@@ -46,11 +46,16 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <div className="content">
         <div className="panel-wrap">
           <div className="discover">
-            <section className="panel-search">
+            <section className="panel-search" style={{ 
+  backgroundImage: `url(${process.env.PUBLIC_URL + '/farm_2.jpg'})`,
+  backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+}}>
               <h1>Discover what to cook & eat.</h1>
               <form onSubmit={getSearch} className="search-form">
                 <input
@@ -92,6 +97,7 @@ const App = () => {
                   </svg>
                 </button>
               </form>
+              <a href="https://www.vecteezy.com/free-vector/farm"></a>
             </section>
             <div className="type_preference">
               <section className="panel-card course">
@@ -109,7 +115,8 @@ const App = () => {
             </div>
           </div>
         </div>
-
+    <div className="content-wrap">
+        <Header />
         <div className="recipes">
           {recipes.map((recipe) => (
             <Recipe
@@ -124,6 +131,7 @@ const App = () => {
             />
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
