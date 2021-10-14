@@ -246,11 +246,6 @@ img, svg {
 // }
 
 
-
-.panel-wrap {
-  overflow-y: scroll;
-}
-
 ///
 *::-webkit-scrollbar-track
 {
@@ -275,6 +270,19 @@ img, svg {
 											  rgba(255, 255, 255, .2) 75%,
 											  transparent 75%,
 											  transparent)
+}
+
+.content-wrap {
+  width: 1412px;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 0 5em;
+}
+
+.panel-wrap {
+  overflow-y: scroll;
+  height: 100vh;
+  padding-right: 0.7em;
 }
 
 // ---------- MEDIA QUERIES ------

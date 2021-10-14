@@ -244,9 +244,6 @@ img, svg {
 
 /* Works on Firefox */
 /* Works on Chrome, Edge, and Safari */
-.panel-wrap {
-  overflow-y: scroll; }
-
 *::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #F5F5F5; }
@@ -258,5 +255,16 @@ img, svg {
 *::-webkit-scrollbar-thumb {
   background-color: #F90;
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); }
+
+.content-wrap {
+  width: 1412px;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 0 5em; }
+
+.panel-wrap {
+  overflow-y: scroll;
+  height: 100vh;
+  padding-right: 0.7em; }
 
 /*# sourceMappingURL=style.css.map */
