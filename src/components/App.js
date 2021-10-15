@@ -6,6 +6,7 @@ import Diet from "./Allergens";
 import World from "./World";
 import Header from "./Header";
 import { v1 as uuid } from "uuid";
+import Footer from "./Footer";
 
 const App = () => {
   const APP_ID = "ea973b87";
@@ -54,7 +55,7 @@ const App = () => {
               className="panel-search"
               style={{
                 backgroundImage: `url(${
-                  process.env.PUBLIC_URL + "/farm_2.jpg"
+                  process.env.PUBLIC_URL + "/HealthyFood_07.jpg"
                 })`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -102,7 +103,6 @@ const App = () => {
                   </svg>
                 </button>
               </form>
-              <a href="https://www.vecteezy.com/free-vector/farm"></a>
             </section>
             <div className="type_preference">
               <section className="panel-card course">
@@ -118,26 +118,27 @@ const App = () => {
                 <World setQuery={setQuery} />
               </section>
             </div>
+            <Footer/>
           </div>
         </div>
         <div className="content-wrap">
           <Header />
 
-              <div className="container-recipes">
-          <div className="recipes">
-            {recipes.map((recipe) => (
-              <Recipe
-                key={recipe.recipe.label}
-                title={recipe.recipe.label}
-                calories={recipe.recipe.calories}
-                image={recipe.recipe.image}
-                ingredients={recipe.recipe.ingredients}
-                url={recipe.recipe.url}
-                id={id}
-                totalTime={recipe.recipe.totalTime}
-              />
-            ))}
-          </div>
+          <div className="container-recipes">
+            <div className="recipes">
+              {recipes.map((recipe) => (
+                <Recipe
+                  key={recipe.recipe.label}
+                  title={recipe.recipe.label}
+                  calories={recipe.recipe.calories}
+                  image={recipe.recipe.image}
+                  ingredients={recipe.recipe.ingredients}
+                  url={recipe.recipe.url}
+                  id={id}
+                  totalTime={recipe.recipe.totalTime}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

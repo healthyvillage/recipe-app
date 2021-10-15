@@ -1,2 +1,17 @@
 // ----------------FOOOTER-----------
 
+.footer {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+
+.footer p:last-child {
+    font-size: 18px;
+    margin: 0;
+}
+
+#Layer_1 {
+    max-width: 250px;
+}

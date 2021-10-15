@@ -36,7 +36,7 @@ a {
 .container {
   margin: auto; }
 
-svg {
+.title_type svg {
   width: 30px; }
 
 h1 {
@@ -66,6 +66,13 @@ h2 {
   font-family: 'Galada', cursive;
   margin: 0.1em 0 0.1em 0;
   font-size: 45px;
+  font-weight: bold;
+  color: #ffc546; }
+
+.logo-footer {
+  font-family: 'Galada', cursive;
+  margin: 0.1em 0 0.1em 0;
+  font-size: 35px;
   font-weight: bold;
   color: #ffc546; }
 
@@ -273,5 +280,32 @@ img, svg {
   overflow-y: scroll;
   height: 100vh;
   padding-right: 0.7em; }
+
+.st0 {
+  fill: #77CC00; }
+
+.st1 {
+  fill: #F4F7FA; }
+
+.st2 {
+  opacity: 0.7;
+  fill: #F4F7FA;
+  enable-background: new; }
+
+.st3 {
+  fill: #929497; }
+
+.footer {
+  max-width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5em; }
+
+.footer p:last-child {
+  font-size: 18px;
+  margin: 0; }
+
+#Layer_1 {
+  max-width: 250px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,10 +4,10 @@ function Header() {
   return (
     <div
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/farm_2.jpg"})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/HealthyFood_07.jpg"})`,
         backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        // backgroundRepeat: "no-repeat",
         width: "100%",
         height: "284px",
         marginBottom: "-1em",
