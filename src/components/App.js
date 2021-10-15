@@ -50,12 +50,17 @@ const App = () => {
       <div className="content">
         <div className="panel-wrap">
           <div className="discover">
-            <section className="panel-search" style={{ 
-  backgroundImage: `url(${process.env.PUBLIC_URL + '/farm_2.jpg'})`,
-  backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-}}>
+            <section
+              className="panel-search"
+              style={{
+                backgroundImage: `url(${
+                  process.env.PUBLIC_URL + "/farm_2.jpg"
+                })`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
               <h1>Discover what to cook & eat.</h1>
               <form onSubmit={getSearch} className="search-form">
                 <input
@@ -115,23 +120,26 @@ const App = () => {
             </div>
           </div>
         </div>
-    <div className="content-wrap">
-        <Header />
-        <div className="recipes">
-          {recipes.map((recipe) => (
-            <Recipe
-              key={recipe.recipe.label}
-              title={recipe.recipe.label}
-              calories={recipe.recipe.calories}
-              image={recipe.recipe.image}
-              ingredients={recipe.recipe.ingredients}
-              url={recipe.recipe.url}
-              id={id}
-              totalTime={recipe.recipe.totalTime}  
-            />
-          ))}
+        <div className="content-wrap">
+          <Header />
+
+              <div className="container-recipes">
+          <div className="recipes">
+            {recipes.map((recipe) => (
+              <Recipe
+                key={recipe.recipe.label}
+                title={recipe.recipe.label}
+                calories={recipe.recipe.calories}
+                image={recipe.recipe.image}
+                ingredients={recipe.recipe.ingredients}
+                url={recipe.recipe.url}
+                id={id}
+                totalTime={recipe.recipe.totalTime}
+              />
+            ))}
+          </div>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
