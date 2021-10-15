@@ -55,11 +55,12 @@ const App = () => {
               className="panel-search"
               style={{
                 backgroundImage: `url(${
-                  process.env.PUBLIC_URL + "/HealthyFood_07.jpg"
+                  process.env.PUBLIC_URL + "/vegpattern_01.svg"
                 })`,
                 backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                // backgroundRepeat: "no-repeat",
+                backgroundColor: "#ffc546"
               }}
             >
               <h1>Discover what to cook & eat.</h1>
@@ -102,7 +103,9 @@ const App = () => {
                     />
                   </svg>
                 </button>
+                <a className="odkaz" href="https://www.vecteezy.com/free-vector/vegetable-pattern" target="_blanket">Vegetable Pattern Vectors by Vecteezy</a>
               </form>
+              
             </section>
             <div className="type_preference">
               <section className="panel-card course">
