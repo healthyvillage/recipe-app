@@ -325,8 +325,8 @@ img, svg {
   height: max-content !important; }
 
 .view-active {
-  -webkit-animation: cssAnimation 3.5s forwards;
-  animation: cssAnimation 3.5s forwards; }
+  -webkit-animation: cssAnimation 2s forwards;
+  animation: cssAnimation 2s forwards; }
 
 @keyframes cssAnimation {
   0% {
@@ -471,7 +471,84 @@ img, svg {
     height: 169px !important; } }
 @media screen and (max-width: 800px) {
   .recipe {
-    width: 230px; } }
+    width: 230px; }
+
+  .recipes {
+    max-width: 100%; } }
+@media screen and (max-width: 755px) {
+  .content {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center; }
+
+  .panel-wrap {
+    width: 100%;
+    overflow-y: hidden;
+    order: 2; }
+
+  .content-wrap {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden; }
+
+  .recipe {
+    width: 240px;
+    margin-right: 1em; }
+
+  .recipes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow: auto;
+    max-width: 16%;
+    justify-content: flex-start; }
+
+  .view {
+    margin-top: 1em; }
+
+  .container-recipes {
+    width: auto; }
+
+  .container-bg {
+    height: unset !important; }
+
+  .panel-wrap {
+    height: unset; }
+
+  .content-wrap {
+    height: unset; }
+
+  .recipe a {
+    width: 205px; }
+
+  .arrow-left svg {
+    transform: rotate(268deg); } }
+@media screen and (max-width: 670px) {
+  .recipe a {
+    width: 195px; }
+
+  .recipes {
+    max-width: 10%; } }
+@media screen and (max-width: 430px) {
+  .logo {
+    font-size: 3.5em;
+    margin-top: 0.7em; }
+
+  .panel-search {
+    padding-top: 0.5em; }
+
+  .recipes {
+    max-width: 7%; } }
+@media screen and (max-width: 400px) {
+  .load-text {
+    font-size: 1.5em; }
+
+  .logo {
+    font-size: 3.1em;
+    margin-top: 0.8em; } }
 .footer {
   max-width: 300px;
   text-align: center;
