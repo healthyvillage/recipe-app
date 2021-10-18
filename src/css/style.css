@@ -51,20 +51,19 @@ a {
 h1 {
   font-family: 'Caveat', cursive;
   font-size: 2.5em;
-  width: 445px;
   margin: 0 auto;
   margin-bottom: 0em;
   color: #fff; }
 
 h2 {
-  font-size: 18px;
-  width: 240px;
+  font-size: 1.125em;
+  width: 90%;
   height: 65px;
   margin: auto;
   margin-top: 0.5em; }
 
 .panel-title {
-  font-size: 18px;
+  font-size: 1.125em;
   padding: 0.3em 0 0 0.5em;
   text-align: left;
   margin-top: 0;
@@ -81,12 +80,12 @@ h2 {
 .logo-footer {
   font-family: 'Galada', cursive;
   margin: 0.1em 0 0.1em 0;
-  font-size: 35px;
+  font-size: 2.1875em;
   font-weight: bold;
   color: #ffc546; }
 
 .tag {
-  font-size: 15px;
+  font-size: 0.9375em;
   font-weight: 500; }
 
 header {
@@ -103,7 +102,7 @@ header {
   padding: 1em 0 2em 0; }
 
 .search-bar {
-  width: 320px;
+  width: 70%;
   padding: 11px;
   border-radius: 10px 0 0 10px; }
 
@@ -128,7 +127,7 @@ input[type=text] {
   vertical-align: middle; }
 
 .recipes {
-  max-width: 1240px;
+  max-width: 92%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -184,7 +183,6 @@ input[type=text] {
   margin-bottom: -1em; }
 
 .discover {
-  width: 526px;
   text-align: center; }
 
 .discover-content {
@@ -193,7 +191,7 @@ input[type=text] {
   margin: 0 auto; }
 
 .panel-card {
-  width: 400px;
+  width: 80%;
   margin: auto;
   background: #fff;
   border-radius: 10px;
@@ -208,7 +206,7 @@ input[type=text] {
 .type_preference ul {
   margin: 0 auto;
   margin-top: 1em;
-  width: 380px;
+  width: 88%;
   padding-left: 0;
   text-align: left; }
 
@@ -218,7 +216,7 @@ input[type=text] {
   margin-bottom: 1.1em; }
 
 .tag {
-  padding: 6px;
+  padding: 0.5em 0.8em;
   border-radius: 5px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; }
 
@@ -278,7 +276,7 @@ img, svg {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); }
 
 .content-wrap {
-  width: 1412px;
+  width: 70%;
   overflow-y: scroll;
   height: 100vh;
   display: flex;
@@ -286,9 +284,9 @@ img, svg {
   align-items: center; }
 
 .panel-wrap {
+  width: 30%;
   overflow-y: scroll;
-  height: 100vh;
-  padding-right: 0.7em; }
+  height: 100vh; }
 
 .st0 {
   fill: #77CC00; }
@@ -346,7 +344,7 @@ img, svg {
     opacity: 1; } }
 .load-text {
   font-family: 'Caveat', cursive;
-  width: 1000px;
+  width: 75%;
   font-size: 4em;
   margin: auto;
   font-weight: 500;
@@ -355,10 +353,125 @@ img, svg {
 
 .arrow-left {
   fill: #ffaf00;
-  width: 200px;
+  width: 15%;
   margin: auto;
   margin-top: 2em; }
 
+.copyright {
+  color: #242424; }
+
+@media screen and (max-width: 1760px) {
+  .panel-card {
+    width: 90%; }
+
+  .load-text {
+    font-size: 3.5em; } }
+@media screen and (max-width: 1550px) {
+  .type_preference ul {
+    width: 95%; }
+
+  .load-text {
+    width: 85%; } }
+@media screen and (max-width: 1400px) {
+  h1 {
+    width: 90%; }
+
+  .load-text {
+    width: 90%; }
+
+  .recipes {
+    max-width: 95%; }
+
+  header {
+    height: 194px; }
+
+  .head-bg {
+    height: 194px !important; }
+
+  .logo {
+    margin-top: 0.5em; } }
+@media screen and (max-width: 1270px) {
+  .recipe {
+    width: 30%; }
+
+  .labels svg {
+    width: 20px; }
+
+  .labels p {
+    margin-top: 0.2em;
+    font-size: 0.65em; }
+
+  h2 {
+    font-size: 1em; } }
+@media screen and (max-width: 1100px) {
+  .tag {
+    padding: 0.3em 0.3em; }
+
+  .search-form input {
+    font-size: 0.7em; }
+
+  .search-button svg {
+    width: 20px; }
+
+  .search-button {
+    height: unset;
+    padding: 0.4em 0.6em; }
+
+  .load-text {
+    font-size: 3em; }
+
+  .labels svg {
+    width: 17px; }
+
+  .labels p {
+    font-size: 0.6em; }
+
+  header {
+    height: 187px; }
+
+  .head-bg {
+    height: 187px !important; }
+
+  .logo {
+    margin-top: 0.5em; } }
+@media screen and (max-width: 1000px) {
+  .recipe {
+    width: 250px; }
+
+  .recipes {
+    justify-content: space-evenly; } }
+@media screen and (max-width: 890px) {
+  .recipes {
+    justify-content: space-around; }
+
+  .panel-card {
+    width: 95%; }
+
+  .type_preference ul {
+    margin-top: 0.8em; }
+
+  h1 {
+    font-size: 2em; }
+
+  .footer {
+    max-width: 95% !important;
+    margin-top: 0em !important; }
+
+  .footer p:last-child {
+    font-size: 1em !important; }
+
+  .logo-footer {
+    font-size: 2em; }
+
+  .load-text {
+    width: 90%;
+    font-size: 2em; }
+
+  .head-bg {
+    height: 169px !important; } }
+@media screen and (max-width: 800px) {
+  .recipe {
+    width: 230px; } }
 .footer {
   max-width: 300px;
   text-align: center;

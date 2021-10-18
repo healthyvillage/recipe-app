@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div
+    <div className="head-bg"
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL + "/vegpattern_01.svg"})`,
         backgroundPosition: "center",

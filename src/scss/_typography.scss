@@ -2,7 +2,7 @@
 h1 {
     font-family: 'Caveat', cursive;
     font-size: 2.5em;
-    width: 445px;
+    // width: 445px;
     margin: 0 auto;
     margin-bottom: 0em;
     // color: #ffc546;
@@ -10,15 +10,15 @@ h1 {
 }
 
 h2 {
-    font-size: 18px;
-    width: 240px;
+    font-size: em(18);
+    width: 90%;
     height: 65px;
     margin: auto;
     margin-top: 0.5em;
 }
 
 .panel-title {
-    font-size: 18px;
+    font-size: em(18);
     padding: 0.3em 0 0 0.5em;
     text-align: left;
     margin-top: 0;
@@ -39,13 +39,13 @@ h2 {
 .logo-footer {
     font-family: 'Galada', cursive;
     margin: 0.1em 0 0.1em 0;
-    font-size: 35px;
+    font-size: em(35);
     font-weight: bold;
     color: #ffc546;
 }
 
 .tag {
-    font-size: 15px;
+    font-size: em(15);
     font-weight: 500;
 }
 

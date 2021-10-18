@@ -101,7 +101,7 @@ function footer() {
           </g>
         </svg>
       </div>
-      <p>© 2021 by Adam Kula</p>
+      <a className="copyright" href="https://adamkula.sk/">© 2021 by Adam Kula</a>
     </div>
   );
 }
