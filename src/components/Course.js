@@ -8,6 +8,7 @@ const course = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility(e)
   };
 
   const preferenceLunch = (e) => {
@@ -15,6 +16,7 @@ const course = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility(e)
   };
 
   const preferenceDinner = (e) => {
@@ -22,6 +24,7 @@ const course = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility(e)
   };
 
   const preferenceSnack = (e) => {
@@ -29,6 +32,7 @@ const course = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility(e)
   };
 
   // const addClass = (event) => event.target.classList.toggle("tag--checked");
@@ -40,6 +44,17 @@ const course = ({ setQuery }) => {
       $other.removeClass("tag--checked");
       $el.addClass("tag--checked");
     });
+
+  const visibility = () => {
+    $(document).on("click", "ul li a", function () {
+      var $show = $(".view");
+      var $hideText = $(".main-text");
+      var $hideBg = $(".container-bg");  
+      $show.addClass("view-active");
+      $hideText.addClass("text-hidden");
+      $hideBg.addClass("bg-hidden");
+    });
+  }
 
   return (
     <div>

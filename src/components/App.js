@@ -15,17 +15,19 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
+  const [count, setCount] = useState(16);
+  // const [visibility, setVisibility ] = useState()
 
   let id = uuid();
 
   useEffect(() => {
     getRecipes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  }, [query, count]);
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=20`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${count}`
     );
 
     const data = await response.json();
@@ -47,7 +49,6 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <Header /> */}
       <div className="content">
         <div className="panel-wrap">
           <div className="discover">
@@ -59,8 +60,7 @@ const App = () => {
                 })`,
                 backgroundPosition: "center",
                 backgroundSize: "contain",
-                // backgroundRepeat: "no-repeat",
-                backgroundColor: "#ffc546"
+                backgroundColor: "#ffc546",
               }}
             >
               <h1>Discover what to cook & eat.</h1>
@@ -72,7 +72,7 @@ const App = () => {
                   value={search}
                   onChange={updateSearch}
                   placeholder="Search Recipe / Ingredients"
-                  autocomplete="off"
+                  autoComplete="off"
                 />
                 <button className="search-button" type="submit">
                   <svg
@@ -87,15 +87,15 @@ const App = () => {
                       fill="none"
                       r="16"
                       stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-miterlimit="10"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeMiterlimit="10"
+                      strokeWidth="2"
                     />
                     <line
                       fill="none"
                       stroke="#000000"
-                      stroke-miterlimit="10"
-                      stroke-width="4"
+                      strokeMiterlimit="10"
+                      strokeWidth="4"
                       x1="32.229"
                       x2="45.5"
                       y1="32.229"
@@ -103,9 +103,14 @@ const App = () => {
                     />
                   </svg>
                 </button>
-                <a className="odkaz" href="https://www.vecteezy.com/free-vector/vegetable-pattern" target="_blanket">Vegetable Pattern Vectors by Vecteezy</a>
+                <a
+                  className="odkaz"
+                  href="https://www.vecteezy.com/free-vector/vegetable-pattern"
+                  target="_blanket"
+                >
+                  Vegetable Pattern Vectors by Vecteezy
+                </a>
               </form>
-              
             </section>
             <div className="type_preference">
               <section className="panel-card course">
@@ -121,26 +126,63 @@ const App = () => {
                 <World setQuery={setQuery} />
               </section>
             </div>
-            <Footer/>
+            <Footer />
           </div>
         </div>
         <div className="content-wrap">
           <Header />
 
           <div className="container-recipes">
-            <div className="recipes">
-              {recipes.map((recipe) => (
-                <Recipe
-                  key={recipe.recipe.label}
-                  title={recipe.recipe.label}
-                  calories={recipe.recipe.calories}
-                  image={recipe.recipe.image}
-                  ingredients={recipe.recipe.ingredients}
-                  url={recipe.recipe.url}
-                  id={id}
-                  totalTime={recipe.recipe.totalTime}
-                />
-              ))}
+            <div
+              className="container-bg"
+              style={{
+                backgroundImage: `url(${
+                  process.env.PUBLIC_URL + "/vegpattern_03.svg"
+                })`,
+                backgroundPosition: "center",
+                backgroundSize: "contain",
+                width: "100%",
+                height: "100vh",
+                // backgroundColor: "#ffc546"
+              }}
+            >
+              <div className="recipes">
+                {recipes.map((recipe) => (
+                  <Recipe
+                    key={recipe.recipe.label}
+                    title={recipe.recipe.label}
+                    calories={recipe.recipe.calories}
+                    image={recipe.recipe.image}
+                    ingredients={recipe.recipe.ingredients}
+                    url={recipe.recipe.url}
+                    id={id}
+                    totalTime={recipe.recipe.totalTime}
+                  />
+                ))}
+              </div>
+
+              <div className="main-text">
+                <p className="load-text">
+                  Find your new favorite recipe in few seconds! Just click on
+                  the category names in the left side of the screen.
+                </p>
+
+                <div className="arrow-left">
+                  <svg
+                    version="1.1"
+                    viewBox="0 0 91 91"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path d="M6.1,50.1c6.3,3.6,12.3,7.5,17.6,12.5c4.9,4.6,7.6,10.4,12,15.3c1.6,1.8,5.6,1.1,5.9-1.6   c1.3-9.7-6.1-18.4-14.7-25.3c18.5,0.4,37,1.4,55.4,2.4c8.4,0.4,8.3-12.6,0-13c-18.5-1-37.1-1.8-55.6-1.3c6.6-7,11.8-15.9,14.1-24.1   c1.1-3.7-3.7-5.1-5.8-2.4c-3.9,5.1-7.6,10.5-12,15.1c-5,5.3-10.8,9-16.9,12.9c-2.2,1.4-2.9,3.4-2.6,5.2C3.4,47.5,4.2,49.1,6.1,50.1   z" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+
+              <button onClick={() => setCount(count + 16)} className="view">
+                Show More
+              </button>
             </div>
           </div>
         </div>

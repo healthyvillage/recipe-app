@@ -8,6 +8,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferenceAsian = (e) => {
@@ -15,6 +16,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferenceFrench = (e) => {
@@ -22,6 +24,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferenceHungarian = (e) => {
@@ -29,6 +32,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferenceIndian = (e) => {
@@ -36,6 +40,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferenceItalian = (e) => {
@@ -43,6 +48,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferenceMexican = (e) => {
@@ -50,6 +56,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   const preferencePersian = (e) => {
@@ -57,6 +64,7 @@ const world = ({ setQuery }) => {
     setQuery(preferenceID);
     console.log(preferenceID);
     addClass(e);
+    visibility();
   };
 
   //   const addClass = (event) => event.target.classList.toggle("tag--checked");
@@ -68,6 +76,17 @@ const world = ({ setQuery }) => {
       $other.removeClass("tag--checked");
       $el.addClass("tag--checked");
     });
+
+  const visibility = () => {
+    $(document).on("click", "ul li a", function () {
+      var $show = $(".view");
+      var $hideText = $(".main-text");
+      var $hideBg = $(".container-bg");
+      $show.addClass("view-active");
+      $hideText.addClass("text-hidden");
+      $hideBg.addClass("bg-hidden");
+    });
+  };
 
   return (
     <div>
