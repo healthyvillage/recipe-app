@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import $ from "jquery";
 
@@ -34,8 +33,6 @@ const course = ({ setQuery }) => {
     addClass(e);
     visibility(e)
   };
-
-  // const addClass = (event) => event.target.classList.toggle("tag--checked");
 
   const addClass = () =>
     $(document).on("click", "ul li a", function () {

@@ -6,7 +6,6 @@ const Allergens = ({ setQuery }) => {
   const preferenceGlutenFree = (e) => {
     const preferenceID = document.getElementById("glutenfree").innerText;
     setQuery(preferenceID);
-    console.log(preferenceID)
     addClass(e);
     visibility();
   }
@@ -14,7 +13,6 @@ const Allergens = ({ setQuery }) => {
   const preferenceDairyFree = (e) => {
     const preferenceID = document.getElementById("dairyfree").innerText;
     setQuery(preferenceID);
-    console.log(preferenceID)
     addClass(e);
     visibility();
   }
@@ -22,7 +20,6 @@ const Allergens = ({ setQuery }) => {
   const preferenceEggFree = (e) => {
     const preferenceID = document.getElementById("eggfree").innerText;
     setQuery(preferenceID);
-    console.log(preferenceID)
     addClass(e);
     visibility();
   }
@@ -30,7 +27,6 @@ const Allergens = ({ setQuery }) => {
   const preferenceNutFree = (e) => {
     const preferenceID = document.getElementById("nutfree").innerText;
     setQuery(preferenceID);
-    console.log(preferenceID)
     addClass(e);
     visibility();
   }
@@ -38,7 +34,6 @@ const Allergens = ({ setQuery }) => {
   const preferenceFishFree = (e) => {
     const preferenceID = document.getElementById("fishfree").innerText;
     setQuery(preferenceID);
-    console.log(preferenceID)
     addClass(e);
     visibility();
   }
@@ -46,7 +41,6 @@ const Allergens = ({ setQuery }) => {
    const preferenceSoyFree = (e) => {
     const preferenceID = document.getElementById("soyfree").innerText;
     setQuery(preferenceID);
-    console.log(preferenceID)
     addClass(e);
     visibility();
   }

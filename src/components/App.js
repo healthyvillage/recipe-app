@@ -16,13 +16,11 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
   const [count, setCount] = useState(16);
-  // const [visibility, setVisibility ] = useState()
 
   let id = uuid();
 
   useEffect(() => {
     getRecipes();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, count]);
 
   const getRecipes = async () => {
@@ -32,10 +30,8 @@ const App = () => {
 
     const data = await response.json();
     setRecipes(data.hits);
-    // console.log(data)
   };
 
-  // health=${health}
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -143,7 +139,6 @@ const App = () => {
                 backgroundSize: "contain",
                 width: "100%",
                 height: "100vh",
-                // backgroundColor: "#ffc546"
               }}
             >
               <div className="recipes">
