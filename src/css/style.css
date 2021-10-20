@@ -492,6 +492,10 @@ img, svg {
   .logo {
     font-size: 3.1em;
     margin-top: 0.8em; } }
+@media screen and (max-width: 320px) {
+  .logo {
+    font-size: 2.8em;
+    margin-top: 0.55em; } }
 .footer {
   max-width: 300px;
   text-align: center;
@@ -562,6 +566,14 @@ img, svg {
 *::-webkit-scrollbar-thumb {
   background-color: #F90;
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); }
+
+html {
+  --scrollbarBG: #FBFBFB;
+  --thumbBG: #F90; }
+
+.scrollbar-moz {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG); }
 
 .st0 {
   fill: #77CC00; }

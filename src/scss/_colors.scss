@@ -83,6 +83,18 @@
 											  transparent)
 }
 
+//Mozilla
+
+html {
+    --scrollbarBG: #FBFBFB;
+    --thumbBG: #F90;
+}
+
+.scrollbar-moz {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+
 .st0{fill:#77CC00;}
 .st1{fill:#F4F7FA;}
 .st2{opacity:0.7;fill:#F4F7FA;enable-background:new    ;}

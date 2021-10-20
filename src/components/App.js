@@ -46,7 +46,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="content">
-        <div className="panel-wrap">
+        <div className="panel-wrap scrollbar-moz">
           <div className="discover">
             <section
               className="panel-search"
@@ -125,7 +125,7 @@ const App = () => {
             <Footer />
           </div>
         </div>
-        <div className="content-wrap">
+        <div className="content-wrap scrollbar-moz">
           <Header />
 
           <div className="container-recipes">

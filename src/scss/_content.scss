@@ -523,6 +523,12 @@ img, svg {
   }
 }
 
+@media screen and (max-width: 320px) {
+  .logo {
+    font-size: 2.8em;
+    margin-top: 0.55em;
+  }
+}
 
 
 
